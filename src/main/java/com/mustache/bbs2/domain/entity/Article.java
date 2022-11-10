@@ -3,13 +3,14 @@ package com.mustache.bbs2.domain.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="article2")
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class Article {
     @Id

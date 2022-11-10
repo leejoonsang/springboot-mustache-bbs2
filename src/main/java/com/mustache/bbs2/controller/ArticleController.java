@@ -63,7 +63,7 @@ public class ArticleController {
             model.addAttribute("article", optionalArticle.get());
             return "edit";
         }else{
-            model.addAttribute("messange", String.format("Id %d이(가) 없습니다.", id));
+            model.addAttribute("message", String.format("Id %d이(가) 없습니다.", id));
             return "error";
         }
     }
@@ -82,13 +82,12 @@ public class ArticleController {
         return String.format("redirect:/articles/%d", article.getId());
     }
 
-    @PostMapping("/{id}/upadte")
+    @PostMapping("/{id}/update")
     public String update(@PathVariable Long id, ArticleDto form, Model model) {
         log.info("title:{} content:{}", form.getTitle(), form.getContent());
-        Article article = form.toEntity();
-        articleRepository.save(form.toEntity());
+        Article article = articleRepository.save(form.toEntity());
         model.addAttribute("article", article);
-        return "redirect:/articles/{id}";
+        return String.format("redirect:/articles/%d", form.getId());
     }
 
 }
