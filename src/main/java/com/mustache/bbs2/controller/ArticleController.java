@@ -27,17 +27,18 @@ public class ArticleController {
         return "new";
     }
 
-    @GetMapping(value = "/list")
+//    @GetMapping(value = "/list")
+//    public String getAll(Model model) {
+//        List<Article> articleEntityList = articleRepository.findAll();
+//        model.addAttribute("articleList", articleEntityList);
+//
+//        return "list";
+//    }
+
+    @GetMapping("")
     public String getAll(Model model) {
-        List<Article> articleEntityList = (List<Article>) articleRepository.findAll();
-        model.addAttribute("articleList", articleEntityList);
+        List<Article> articleEntityList = articleRepository.findAll();
 
-        return "list";
-    }
-
-    @GetMapping(value = "")
-    public String getAlldefault(Model model) {
-        List<Article> articleEntityList = (List<Article>) articleRepository.findAll();
         model.addAttribute("articleList", articleEntityList);
 
         return "list";
