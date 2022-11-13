@@ -4,7 +4,6 @@ import com.mustache.bbs2.domain.entity.Article;
 import lombok.*;
 
 @Getter
-@ToString
 @AllArgsConstructor
 public class ArticleDto {
     private Long id;
