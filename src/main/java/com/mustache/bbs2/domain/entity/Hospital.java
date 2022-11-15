@@ -27,9 +27,12 @@ public class Hospital {
 
     private String businessTypeName;
     private Integer patientRoomCount;
+    private Integer businessStatusCode;
+
 
     public static HospitalResponse of(Hospital hospital) {
         return new HospitalResponse(hospital.getId(), hospital.getHospitalName(), hospital.getRoadNameAddress(),
-                hospital.getPhone(), hospital.getBusinessTypeName(), hospital.getPatientRoomCount());
+                hospital.getPhone(), hospital.getBusinessTypeName(),
+                hospital.getPatientRoomCount(), hospital.getBusinessStatusCode());
     }
 }
